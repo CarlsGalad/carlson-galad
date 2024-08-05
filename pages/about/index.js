@@ -1,10 +1,11 @@
+import React, { useState } from "react";
+
 // icons
 import {
     FaHtml5,
     FaCss3,
     FaJs,
     FaReact,
-    FaWordpress,
     FaFigma,
 } from "react-icons/fa";
 
@@ -13,29 +14,48 @@ import {
     SiFramer,
     SiAdobexd,
     SiAdobephotoshop,
+    SiDart,
+    SiFlutter,
+    SiFirebase,
+    SiNativescript,
+    SiCanva,
+
 } from "react-icons/si";
 
 
 //  data
-const aboutData = [
+export const aboutData = [
     {
         title: 'skills',
         info: [
             {
                 title: 'Web Development',
                 icons: [
-                    <FaHtml5 />,
+                    <SiDart />,
                     <FaCss3 />,
                     <FaJs />,
                     <FaReact />,
                     <SiNextdotjs />,
                     <SiFramer />,
-                    <FaWordpress />,
+                    <SiFlutter />,
+
+
+                ],
+            },
+            {
+                title: 'Mobile Development andriod & ios',
+                icons: [
+                    <SiDart />,
+                    <SiFlutter />,
+                    <SiNativescript />,
+                    <SiFirebase />,
+
+
                 ],
             },
             {
                 title: 'UI/UX Design',
-                icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />],
+                icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />, <SiCanva />],
             },
         ],
     },
@@ -88,8 +108,60 @@ const aboutData = [
     },
 ];
 
+//components
+import Avatar from "@/components/Avatar";
+import Circles from "@/components/Circles";
+
+
+//motion from framer
+import { motion } from "framer-motion";
+import { fadeIn } from "@/components/variants";
+
 const About = () => {
-    return <div>About</div>;
+    const [index, setIndex] = useState(0);
+    console.log(index);
+    return (
+        <div className="h-full bg-primary/30 py-52 text-center xl:text-left ">
+            <Circles />
+            {/* avatar */}
+            <motion.div
+                variants={fadeIn('right', 0.2)}
+                initial='hidden'
+                animate='show'
+                exit='hidden'
+                className="hidden xl:flex absolute bottom-0 -left-[370px]">
+                <Avatar />
+            </motion.div>
+            <div className=" container mx-auto h-full flex flex-col items-center xl:flex-row
+        gap-x-6">
+                <dov>text</dov>
+                <div>
+                    <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
+                        {aboutData.map((item, itemIndex) => {
+                            return (
+                                <div
+                                    key={itemIndex}
+                                    className={`${index === itemIndex && 'text-accent after:w-[100%] after:bg-accent after:transition-all after:duration-300'} cursor-pointer capitalize
+                        xl:text-lg relative after:w-8 after:h-[2px] after:bg-white after:absolute after:bottom-1 after:left-0`}
+                                    onClick={() => setIndex(itemIndex)}>
+                                    {item.title}
+                                </div>);
+                        })}
+                    </div>
+                    <div>
+                        {aboutData[index].info.map((item, itemIndex) => {
+                            return <div key={itemIndex}>
+        {/* title */}
+                                <div>
+                                    {item.title}
+        </div>
+    </div>
+})}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default About;
