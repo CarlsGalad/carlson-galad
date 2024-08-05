@@ -41,7 +41,7 @@ const Home = () => {
           exit='hidden'
           className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
           Dreams are the seeds of possibility, planted in the fertile ground of our minds.
-          Through the digital canvas, we have the power to nurture these dreams, transforming them into a tangiblereality. In the synthesis of innovation and imagination, we turn
+          Through the digital canvas, we have the power to nurture these dreams, transforming them into a tangible reality. In the synthesis of innovation and imagination, we turn
           aspirations into actionable solutions, proving that with the right tools, our dreams can indeed shape the world.
         </motion.p>
         {/*btn */}
@@ -68,7 +68,7 @@ const Home = () => {
        xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0">
       </div>
       {/* particles */}
-      {/* <ParticlesContainer /> */}
+      <ParticlesContainer />
       {/* avatar img */}
       <motion.div
         variants={fadeIn('up', 0.5)}
@@ -76,7 +76,7 @@ const Home = () => {
         animate='show'
         exit='hidden'
         transition={{ duration: 1, ease: 'easeInOut' }}
-        className='w-full h-full max-w-[700px] max-h-[478px] absolute -bottom-[10%] lg:bottom-[35%] lg:right-[0%] hidden xl:flex'>
+        className='w-full h-full max-w-[700px] max-h-[478px] absolute -bottom-[10%] lg:bottom-[20%] lg:right-[0%] hidden xl:flex'>
         <Avatar />
       </motion.div>
     </div>
