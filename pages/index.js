@@ -30,11 +30,15 @@ const Home = () => {
         <motion.h1 variants={fadeIn('down', 0.2)}
           initial='hidden'
           animate='show'
-          exit='hidden' className="h1">
+          exit='hidden' className="h1 xl:max-w-[900px] lg:max-w-max lg:text-5xl md:max-w-[760px] 
+          md:max-h-[100] md:pt-25  md:pb-0  sm:max-w-[600px] sm:pt-28 md:text-4xl ">
           Beyond Imagination, Bringing <or /> Your{' '}
           <span className="text-accent "> Dreams to Life</span>
 
         </motion.h1>
+        {/* <div class="xs:bg-green-100 sm:bg-blue-200 md:bg-red-300 lg:bg-white xl:bg-orange-600 2xl:bg-red-400">
+          Responsive Background Colors
+        </div> */}
         <motion.p variants={fadeIn('down', 0.3)}
           initial='hidden'
           animate='show'
@@ -76,7 +80,7 @@ const Home = () => {
         animate='show'
         exit='hidden'
         transition={{ duration: 1, ease: 'easeInOut' }}
-        className='w-full h-full max-w-[700px] max-h-[478px] absolute -bottom-[10%] lg:bottom-[20%] lg:right-[0%] hidden xl:flex'>
+        className='w-full h-full max-w-[700px] max-h-[478px] absolute -bottom-[10%] lg:bottom-[20%] lg:right-[0%] hidden xl:flex py-0'>
         <Avatar />
       </motion.div>
     </div>
