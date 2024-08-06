@@ -153,7 +153,8 @@ const About = () => {
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className="max-w[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:p-0 text-justify text-sm">I am a seasoned developer with over 5 years of experience
+                        className="max-w[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:p-0 text-justify text-sm">I am <span className="text-base
+                         text-accent"> Adams Kingsley</span> a seasoned developer with over 5 years of experience
                         specializing in Flutter, React, and CSS for both mobile and web applications. My passion lies in creating seamless user experiences and efficient, scalable
                         solutions. Throughout my career, I have successfully delivered numerous projects, consistently blending innovation with technical expertise to meet and exceed client expectations.
                     </motion.p>
