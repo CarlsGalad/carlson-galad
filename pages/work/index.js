@@ -1,6 +1,3 @@
-
-
-
 //components
 import WorkSlider from '@/components/WorkSlider';
 import Bulb from '@/components/Bulb';
@@ -17,15 +14,15 @@ const Work = () => {
             <div className=' container mx-auto'>
                 <div className='flex flex-col xl:flex-row gap-x-8'>
                     {/* text */}
-                    <div className='text-center flex xl:w-[30vw] flex-col lg:text-left- mb-4
-                    xl:mb-0 group items-center:'>
+                    <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4
+                    xl:mb-0 group items-center'>
                         <motion.h2
                             variants={fadeIn('down', 0.2)}
                             initial='hidden'
                             animate='show'
                             exit='hidden'
                             className='h2 xl:mt-12'>
-                            My projects<span className='text-accent'>
+                            Our Work<span className='text-accent'>
                                 .
                             </span>
                         </motion.h2>
@@ -34,8 +31,8 @@ const Work = () => {
                             initial='hidden'
                             animate='show'
                             exit='hidden'
-                            className='mb-4 max-w-[400px] mx-auto lg:mx-8 xl:px-0' >
-                            You can reduce the text size by adding a class to set a smaller font size. Heres how you can modify your paragraph to reduce the text size
+                            className='mb-4 max-w-[400px] mx-auto lg:mx-8 xl:px-0 text-sm' >
+                            From corporate treasury platforms managing digital assets to decentralized applications powering regenerative economies—explore the systems we&apos;ve built for clients across finance, blockchain, and enterprise technology.
                         </motion.p>
                     </div>
                     <motion.div

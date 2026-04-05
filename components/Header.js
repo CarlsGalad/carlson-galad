@@ -6,18 +6,17 @@ const Header = () => {
     return (
         <header className="absolute z-30 w-full flex items-center px-16 xl:px-0 xl:h-[90px]">
             <div className="container mx-auto">
-                <div className="flex flex-col lg:flex-row justify-between items-center gap-y-6 py-8">
+                <div className="flex flex-row justify-between items-center py-4 xl:py-8">
                     {/* logo */}
                     <Link href={'/'}>
-                        <div className="relative w-[150px] h-[79px]"> {/* Adjust the width and height as needed */}
+                        <div className="relative w-[120px] h-[33px] xl:w-[160px] xl:h-[44px]">
                             <Image
-                                src={'/logo.svg'}
-                                alt="Logo"
-                                layout="fill"
-                                objectFit="cover" // Or "cover" depending on the desired effect
-                                objectPosition="center" // Adjust position as needed
-                                priority={true}
-                            />
+    src={'/logo.png'}
+    alt="Logo"
+    fill
+    style={{ objectFit: 'contain', objectPosition: 'left center' }}
+    priority={true}
+/>
                         </div>
                     </Link>
                     {/* socials */}

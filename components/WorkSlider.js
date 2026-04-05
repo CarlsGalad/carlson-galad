@@ -53,7 +53,7 @@ import 'swiper/css/free-mode';
 import 'swiper/css/pagination';
 
 //modules
-import { FreemMode, Pagination } from 'swiper';
+import { FreeMode, Pagination } from 'swiper/modules';
 
 
 //icons

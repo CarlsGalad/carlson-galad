@@ -1,90 +1,89 @@
 import dynamic from 'next/dynamic';
-//next image
 import Image from "next/image";
 
-//components
 const ParticlesContainer = dynamic(() => import('@/components/ParticlesContainer'), {
   ssr: false,
 });
 
-
 import ProjectsBtn from "@/components/ProjectsBtn";
 import Avatar from "@/components/Avatar";
-
-// framer motion 
-import { delay, motion } from "framer-motion";
-
-//variants
+import { motion } from "framer-motion";
 import { fadeIn } from '../components/variants';
 
 const Home = () => {
-  return <div
-    className="bg-primary/60 h-full">
-    {/*  text */}
-    <div className=" w-full h-full bg-gradient-to-r from-primary/10 via-black/30
-     to-black/10">
+  return (
+    <div className="bg-primary/60 h-full">
+      {/* text */}
+      <div className="w-full h-full bg-gradient-to-r from-primary/10 via-black/30 to-black/10">
+        <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left h-full container mx-auto">
+          
+          {/* title */}
+          <motion.h1
+            variants={fadeIn('down', 0.2)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className="h1 xl:max-w-[900px] lg:max-w-max lg:text-5xl md:max-w-[760px] md:text-4xl pt-32 xl:pt-0"
+          >
+            Beyond Imagination, Bringing <br /> Your{' '}
+            <span className="text-accent">Dreams to Life</span>
+          </motion.h1>
 
-      <div className="text-center flex flex-col justify-center xl:pt-40 xl:text-left
-      h-full container mx-auto">
-        {/* title*/}
-        <motion.h1 variants={fadeIn('down', 0.2)}
-          initial='hidden'
-          animate='show'
-          exit='hidden' className="h1 xl:max-w-[900px] lg:max-w-max lg:text-5xl md:max-w-[760px] 
-          md:max-h-[100] md:pt-25  md:pb-0  sm:max-w-[600px] sm:pt-28 md:text-4xl ">
-          Beyond Imagination, Bringing <or /> Your{' '}
-          <span className="text-accent "> Dreams to Life</span>
+          {/* paragraph */}
+          <motion.p
+            variants={fadeIn('down', 0.3)}
+            initial='hidden'
+            animate='show'
+            exit='hidden'
+            className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16"
+          >
+            Dreams are the seeds of possibility, planted in the fertile ground of our minds.
+            Through the digital canvas, we have the power to nurture these dreams, transforming
+            them into a tangible reality. In the synthesis of innovation and imagination, we turn
+            aspirations into actionable solutions, proving that with the right tools, our dreams
+            can indeed shape the world.
+          </motion.p>
 
-        </motion.h1>
-        {/* <div class="xs:bg-green-100 sm:bg-blue-200 md:bg-red-300 lg:bg-white xl:bg-orange-600 2xl:bg-red-400">
-          Responsive Background Colors
-        </div> */}
-        <motion.p variants={fadeIn('down', 0.3)}
-          initial='hidden'
-          animate='show'
-          exit='hidden'
-          className="max-w-sm xl:max-w-xl mx-auto xl:mx-0 mb-10 xl:mb-16">
-          Dreams are the seeds of possibility, planted in the fertile ground of our minds.
-          Through the digital canvas, we have the power to nurture these dreams, transforming them into a tangible reality. In the synthesis of innovation and imagination, we turn
-          aspirations into actionable solutions, proving that with the right tools, our dreams can indeed shape the world.
-        </motion.p>
-        {/*btn */}
-        <div className="flex justify-center xl:hidden relative">
+          {/* btn - mobile only, with bottom margin to clear the nav bar */}
+         <div className="flex justify-center xl:hidden relative z-10 mb-28">
+    <ProjectsBtn />
+</div>
 
-          <ProjectsBtn />
+          {/* btn - desktop only */}
+         <motion.div
+    variants={fadeIn('down', 0.4)}
+    initial='hidden'
+    animate='show'
+    exit='hidden'
+    className="hidden xl:flex relative z-10"
+>
+    <ProjectsBtn />
+</motion.div>
         </div>
+      </div>
+
+      {/* image layer */}
+     <div className="w-full h-full absolute right-0 bottom-0 pointer-events-none">
+    {/* bg explosion */}
+    <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0" />
+
+        {/* particles */}
+        <ParticlesContainer />
+
+        {/* avatar - desktop only */}
         <motion.div
-          variants={fadeIn('down', 0.4)}
+          variants={fadeIn('up', 0.5)}
           initial='hidden'
           animate='show'
           exit='hidden'
-          className="hidden xl:flex"
+          transition={{ duration: 1, ease: 'easeInOut' }}
+          className='w-full h-full max-w-[700px] max-h-[478px] absolute -bottom-[10%] lg:bottom-[20%] lg:right-[0%] hidden xl:flex py-0'
         >
-          <ProjectsBtn />
+          <Avatar />
         </motion.div>
       </div>
-
     </div>
-    {/* image*/}
-    <div className="w-full h-full absolute right-0 bottom-0">
-      {/* bg img */}
-      <div className="bg-none xl:bg-explosion xl:bg-cover xl:bg-right
-       xl:bg-no-repeat w-full h-full absolute mix-blend-color-dodge translate-z-0">
-      </div>
-      {/* particles */}
-      <ParticlesContainer />
-      {/* avatar img */}
-      <motion.div
-        variants={fadeIn('up', 0.5)}
-        initial='hidden'
-        animate='show'
-        exit='hidden'
-        transition={{ duration: 1, ease: 'easeInOut' }}
-        className='w-full h-full max-w-[700px] max-h-[478px] absolute -bottom-[10%] lg:bottom-[20%] lg:right-[0%] hidden xl:flex py-0'>
-        <Avatar />
-      </motion.div>
-    </div>
-  </div>;
+  );
 };
 
 export default Home;

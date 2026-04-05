@@ -2,26 +2,29 @@ import React, { useState } from "react";
 
 // icons
 import {
-    FaHtml5,
-    FaCss3,
-    FaJs,
     FaReact,
-    FaFigma,
+    FaDocker,
+    FaAws,
+    FaGitAlt,
 } from "react-icons/fa";
 
 import {
     SiNextdotjs,
-    SiFramer,
-    SiAdobexd,
-    SiAdobephotoshop,
-    SiDart,
     SiFlutter,
+    SiDart,
+    SiGo,
+    SiPostgresql,
+    SiRedis,
+    SiSolidity,
+    SiPolygon,
+    SiTerraform,
+    SiNginx,
     SiFirebase,
-    SiNativescript,
-    SiCanva,
-
+    SiTailwindcss,
+    SiFigma,
 } from "react-icons/si";
 
+import { TbBrandCSharp } from "react-icons/tb";
 
 //  data
 export const aboutData = [
@@ -29,42 +32,46 @@ export const aboutData = [
         title: 'skills',
         info: [
             {
-                title: 'Web Development',
+                title: 'Backend Development',
                 icons: [
-                    <SiDart />,
-                    <FaCss3 />,
-                    <FaJs />,
-                    <FaReact />,
-                    <SiNextdotjs />,
-                    <SiFramer />,
-                    <SiFlutter />,
+                    'SiGo',
+                    'TbBrandCSharp',
+                    'SiPostgresql',
+                    'SiRedis',
                 ],
             },
             {
-                title: 'Mobile Development Andriod & iOS',
+                title: 'Blockchain & Smart Contracts',
                 icons: [
-                    <SiDart />,
-                    <SiFlutter />,
-                    <SiNativescript />,
-                    <SiFirebase />,
+                    'SiSolidity',
+                    'SiPolygon',
                 ],
             },
             {
-                title: 'UI/UX Design',
-                icons: [<FaFigma />, <SiAdobexd />, <SiAdobephotoshop />, <SiCanva />],
-            },
-        ],
-    },
-    {
-        title: 'awards',
-        info: [
-            {
-                title: 'Webby Awards - Honoree',
-                stage: '2011 - 2012',
+                title: 'Frontend & Mobile',
+                icons: [
+                    'FaReact',
+                    'SiNextdotjs',
+                    'SiFlutter',
+                    'SiDart',
+                    'SiTailwindcss',
+                ],
             },
             {
-                title: 'Adobe Design Achievement Awards - Finalist',
-                stage: '2009 - 2010',
+                title: 'DevOps & Infrastructure',
+                icons: [
+                    'FaDocker',
+                    'SiTerraform',
+                    'SiNginx',
+                    'FaGitAlt',
+                    'FaAws',
+                ],
+            },
+            {
+                title: 'UI/UX & Design',
+                icons: [
+                    'SiFigma',
+                ],
             },
         ],
     },
@@ -72,33 +79,41 @@ export const aboutData = [
         title: 'experience',
         info: [
             {
-                title: 'UX/UI Designer - XYZ Company',
-                stage: '2012 - 2023',
+                title: 'Team Lead & Systems Architect - Beyle Technologies',
+                stage: '2022 - Present',
             },
             {
-                title: 'Web Developer - ABC Agency',
-                stage: '2010 - 2012',
+                title: 'Backend Engineer - Enterprise & Blockchain Projects',
+                stage: '2020 - Present',
             },
             {
-                title: 'Intern - DEF Corporation',
-                stage: '2008 - 2010',
+                title: 'Full-Stack Developer - Multi-Platform Applications',
+                stage: '2019 - 2022',
             },
         ],
     },
     {
-        title: 'credentials',
+        title: 'certifications',
         info: [
             {
-                title: 'Web Development - ABC University, LA, CA',
-                stage: '2011',
+                title: 'Dart Programming - Programming Hub',
+                stage: '2023',
             },
             {
-                title: 'Computer Science Diploma - AV Technical Institute',
-                stage: '2009',
+                title: 'Flutter Development - Programming Hub',
+                stage: '2023',
             },
             {
-                title: 'Certified Graphic Designer - ABC Institute, Los Angeles, CA',
-                stage: '2006',
+                title: 'DevOps Fundamentals - Programming Hub',
+                stage: '2023',
+            },
+            {
+                title: 'Artificial Intelligence - Programming Hub',
+                stage: '2023',
+            },
+            {
+                title: 'Firebase - Programming Hub',
+                stage: '2023',
             },
         ],
     },
@@ -108,36 +123,54 @@ export const aboutData = [
 import Avatar from "@/components/Avatar";
 import Circles from "@/components/Circles";
 
-
 //motion from framer
 import { motion } from "framer-motion";
 import { fadeIn } from "@/components/variants";
-import { RiRadarFill } from "react-icons/ri";
 
 //counter
 import CountUp from "react-countup";
 
-
 const About = () => {
     const [index, setIndex] = useState(0);
-    console.log(index);
+
+    const renderIcon = (iconName) => {
+        switch (iconName) {
+            case 'FaReact': return <FaReact />;
+            case 'FaDocker': return <FaDocker />;
+            case 'FaAws': return <FaAws />;
+            case 'FaGitAlt': return <FaGitAlt />;
+            case 'SiNextdotjs': return <SiNextdotjs />;
+            case 'SiFlutter': return <SiFlutter />;
+            case 'SiDart': return <SiDart />;
+            case 'SiGo': return <SiGo />;
+            case 'TbBrandCSharp': return <TbBrandCSharp />;
+            case 'SiPostgresql': return <SiPostgresql />;
+            case 'SiRedis': return <SiRedis />;
+            case 'SiSolidity': return <SiSolidity />;
+            case 'SiPolygon': return <SiPolygon />;
+            case 'SiTerraform': return <SiTerraform />;
+            case 'SiNginx': return <SiNginx />;
+            case 'SiFirebase': return <SiFirebase />;
+            case 'SiTailwindcss': return <SiTailwindcss />;
+            case 'SiFigma': return <SiFigma />;
+            default: return null;
+        }
+    };
 
     return (
-
-        <div className="h-full bg-primary/30 py-52 text-center xl:text-left ">
+        <div className="min-h-full bg-primary/30 py-32 xl:py-52 text-center xl:text-left overflow-y-auto">
             <Circles />
             {/* avatar */}
-            <motion.div
-                variants={fadeIn('right', 0.2)}
-                initial='hidden'
-                animate='show'
-                exit='hidden'
-                className="hidden xl:flex absolute bottom-0 right-7 bg-blend-color-dodge">
-                <Avatar />
-            </motion.div>
+          <motion.div
+    variants={fadeIn('right', 0.2)}
+    initial='hidden'
+    animate='show'
+    exit='hidden'
+    className="hidden xl:flex absolute bottom-0 right-7 bg-blend-color-dodge opacity-10 z-0">
+    <Avatar />
+</motion.div>
             {/*text*/}
-            <div className=" container mx-auto h-full flex flex-col items-center xl:flex-row
-            gap-x-6">
+            <div className="container mx-auto h-full flex flex-col items-center xl:flex-row gap-x-6 relative z-10">
                 {/*text*/}
                 <div className='flex-2  flex flex-col justify-center  xl:px-16 '>
                     <motion.h2
@@ -146,17 +179,16 @@ const About = () => {
                         animate='show'
                         exit='hidden'
                         className="h2 text-base text-2x1 xl:text-3xl">
-                        Crafting <span className="text-accent">Digital Experiences</span> with Precision and Passion</motion.h2>
+                        Building <span className="text-accent">Trust Infrastructure</span> for Digital Economies
+                    </motion.h2>
 
                     <motion.p
                         variants={fadeIn('right', 0.4)}
                         initial='hidden'
                         animate='show'
                         exit='hidden'
-                        className="max-w[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:p-0 text-justify text-sm">I am <span className="text-base
-                         text-accent"> Adams Kingsley</span> a seasoned developer with over 5 years of experience
-                        specializing in Flutter, React, and CSS for both mobile and web applications. My passion lies in creating seamless user experiences and efficient, scalable
-                        solutions. Throughout my career, I have successfully delivered numerous projects, consistently blending innovation with technical expertise to meet and exceed client expectations.
+                        className="max-w[500px] mx-auto xl:mx-0 mb-6 xl:mb-12 px-2 xl:p-0 text-justify text-sm">
+                        We are <span className="text-base text-accent">Beyle Technologies</span>, an enterprise software development firm specializing in blockchain financial infrastructure, multi-stakeholder platforms, and mission-critical systems. Led by <span className="text-accent">Adams Kingsley</span>, our team architects production-grade solutions that power corporate treasury operations, decentralized applications, and service economy platforms across Africa and beyond. From smart contract development to AI-powered marketplaces, we build systems where security, scalability, and regulatory compliance are non-negotiable.
                     </motion.p>
                     {/* counters*/}
                     <motion.div
@@ -173,20 +205,21 @@ const About = () => {
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">Years of experience</div>
                             </div>
-                            {/*clients*/}
+                            {/*projects*/}
                             <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                                 <div className=" 'text-2xl xl:text-4xl text-accent font-extrabold mb-2">
-                                    <CountUp start={0} end={92} duration={5} /> +
+                                    <CountUp start={0} end={4} duration={5} />
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                                    Satisfied Client</div>
-                            </div>{/*Completed jobs*/}
+                                    Flagship Products</div>
+                            </div>
+                            {/*tech stack*/}
                             <div className="relative flex-1 after:w-[1px] after:h-full after:bg-white/10 after:absolute after:top-0 after:right-0">
                                 <div className=" 'text-2xl xl:text-4xl text-accent font-extrabold mb-2">
-                                    <CountUp start={0} end={137} duration={5} /> +
+                                    <CountUp start={0} end={15} duration={5} /> +
                                 </div>
                                 <div className="text-xs uppercase tracking-[1px] leading-[1.4] max-w-[100px]">
-                                    Completed Projects</div>
+                                    Technologies Mastered</div>
                             </div>
                         </div>
                     </motion.div>
@@ -197,7 +230,7 @@ const About = () => {
                     initial='hidden'
                     animate='show'
                     exit='hidden'
-                    className="flex flex-col w-full xl:max-w-[48%} h-[480px}">
+                    className="flex flex-col w-full xl:max-w-[48%] xl:h-[480px]">
                     <div className="flex gap-x-4 xl:gap-x-8 mx-auto xl:mx-0 mb-4">
                         {aboutData.map((item, itemIndex) => {
                             return (
@@ -216,20 +249,18 @@ const About = () => {
                     items-center xl:items-start">
                         {aboutData[index].info.map((item, itemIndex) => {
                             return (
-                                <div key={itemIndex} className="flex-1 flex-col md:flex-row max-w-max gap-x-2  items-center text-white/60">
-                                    {/* title */}
-                                    <div className="font-light mb-2 md:mb-0">{item.title}</div>
-                                    <div className="hidden md:flex">-</div>
-                                    <div>{item.stage}</div>
+                                <div key={itemIndex} className="flex flex-col md:flex-row max-w-max gap-x-2 items-center text-white/60 mx-auto xl:mx-0">
+    {/* title */}
+    <div className="font-light mb-2 md:mb-0 text-center xl:text-left">{item.title}</div>
+    <div className="hidden md:flex">-</div>
+    <div>{item.stage}</div>
 
-                                    <div className="flex gap-x-4 items-center">
-                                        {/* icon*/}
-                                        {item.icons?.map((icon, itemIndex) => {
-                                            return <div className="text-2xl text-white">{icon}</div>
-                                        })}
-                                    </div>
-
-                                </div>);
+    <div className="flex gap-x-4 items-center justify-center xl:justify-start">
+        {item.icons?.map((iconName) => {
+            return <div key={iconName} className="text-2xl text-white">{renderIcon(iconName)}</div>
+        })}
+    </div>
+</div>);
                         })}
                     </div>
                 </motion.div>

@@ -1,53 +1,50 @@
 //swiper
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-
 //
 import 'swiper/css';
 import 'swiper/css/free-mode';
-import 'swiper/css/pagination'
+import 'swiper/css/pagination';
 
-    ;
 // icons
 import {
-    RxCrop,
-    RxPencil2,
-    RxDesktop,
-    RxReader,
-    RxRocket,
+    RxCube,
+    RxLockClosed,
+    RxDashboard,
+    RxLayers,
+    RxCode,
     RxArrowTopRight
 } from "react-icons/rx";
 
 //modules
-import { FreemMode, Pagination } from 'swiper';
-
+import { FreeMode, Pagination } from 'swiper/modules';
 
 // data
 const serviceData = [
     {
-        icon: <RxCrop />,
-        title: 'Branding',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon: <RxCube />,
+        title: 'Blockchain Infrastructure',
+        description: 'Smart contract development, multi-signature wallets, and DeFi integrations on EVM-compatible chains.',
     },
     {
-        icon: <RxPencil2 />,
-        title: 'Design',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon: <RxLockClosed />,
+        title: 'Financial Systems',
+        description: 'Corporate treasury platforms, payment orchestration, and escrow systems for high-stakes transactions.',
     },
     {
-        icon: <RxDesktop />,
-        title: 'Development',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon: <RxDashboard />,
+        title: 'Enterprise Platforms',
+        description: 'Multi-stakeholder systems with role-based access, compliance frameworks, and audit trails.',
     },
     {
-        icon: <RxReader />,
-        title: 'Copywriting',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon: <RxLayers />,
+        title: 'Marketplace Solutions',
+        description: 'AI-powered matching engines, unified wallets, and federated logistics for service economies.',
     },
     {
-        icon: <RxRocket />,
-        title: 'SEO',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        icon: <RxCode />,
+        title: 'Custom Development',
+        description: 'End-to-end system architecture from backend APIs to mobile applications with production-grade security.',
     },
 ];
 
@@ -64,29 +61,24 @@ const ServiceSlider = () => {
                     spaceBetween: 15
                 },
             }}
-
             freeMode={true}
-            peginationg={{
+            pagination={{
                 clickable: true
             }}
-            modules={{
-                FreemMode,
-                Pagination
-            }}
+            modules={[FreeMode, Pagination]}
             className='h-[240px] sm:h-[340px]'
         >
             {serviceData.map((item, index) => {
                 return (
                     <SwiperSlide key={index}>
                         <div className='bg-[rgba(65,47,123,0.15)] h-max rounded-lg px-6 py-8 flex
-                        sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba{89,65
-                        169,0.15}] transition-all duration-300'>
+                        sm:flex-col gap-x-6 sm:gap-x-0 group cursor-pointer hover:bg-[rgba(89,65,169,0.15)] transition-all duration-300'>
                             {/*icon*/}
                             <div className='text-4xl text-accent mb-4'>{item.icon}</div>
                             {/* title and desc*/}
                             <div className='mb-8'>
                                 <div className='mb-2 text-lg'>{item.title}</div>
-                                <p className='max-w-[345px] leading-normal '>{item.description}</p>
+                                <p className='max-w-[345px] leading-normal'>{item.description}</p>
                             </div>
                             {/*arrow*/}
                             <div className='text-3xl'>

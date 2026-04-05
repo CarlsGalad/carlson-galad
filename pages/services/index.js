@@ -1,6 +1,4 @@
-
-
-
+// Services.jsx
 //components
 import ServiceSlider from '@/components/ServiceSlider';
 import Bulb from '@/components/Bulb';
@@ -17,7 +15,7 @@ const Services = () => {
             <div className=' container mx-auto'>
                 <div className='flex flex-col xl:flex-row gap-x-8'>
                     {/* text */}
-                    <div className='text-center flex xl:w-[30vw] flex-col lg:text-left- mb-4
+                    <div className='text-center flex xl:w-[30vw] flex-col lg:text-left mb-4
                     xl:mb-0'>
                         <motion.h2
                             variants={fadeIn('down', 0.2)}
@@ -25,7 +23,7 @@ const Services = () => {
                             animate='show'
                             exit='hidden'
                             className='h2 xl:mt-8'>
-                            My Services<span className='text-accent'>
+                            Our Services<span className='text-accent'>
                                 .
                             </span>
                         </motion.h2>
@@ -34,8 +32,8 @@ const Services = () => {
                             initial='hidden'
                             animate='show'
                             exit='hidden'
-                            className='mb-4 max-w-[400px] mx-auto lg:mx-8 xl:px-0' >
-                            You can reduce the text size by adding a class to set a smaller font size. Heres how you can modify your paragraph to reduce the text size
+                            className='mb-4 max-w-[400px] mx-auto lg:mx-8 xl:px-0 text-sm' >
+                            We build enterprise-grade blockchain infrastructure, financial systems, and multi-stakeholder platforms that power critical operations across traditional and digital economies.
                         </motion.p>
                     </div>
                     <motion.div
